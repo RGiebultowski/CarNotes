@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/autoChooseSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/tankInsertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_local_gas_station"
+        android:text="Nowe Tankowanie"/>
+    <Button
+        android:id="@+id/crashImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_car_crash"
+        android:text="Nowa Kolizja"/>
+    <Button
+        android:id="@+id/repairImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_repair"
+        android:text="Nowa Naprawa"/>
+    <Button
+        android:id="@+id/newCarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_directions_car"
+        android:text="Nowe Auto"/>
+
+</LinearLayout>
