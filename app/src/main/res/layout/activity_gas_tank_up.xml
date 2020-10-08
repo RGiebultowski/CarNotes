@@ -4,71 +4,83 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Activity.GasTankUp">
-
-    <TextView
-        android:id="@+id/dateTextView"
+    tools:context="Activity.GasTankUp"
+    android:padding="5dp"
+    android:background="@color/gray">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Data"
-        android:textColor="@color/black"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        style="@style/common_edittext_style"/>
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:longClickable="false"
+            android:focusable="false"
+            style="@style/common_edittext_style"/>
 
-    <TextView
-        android:id="@+id/milageTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Przebieg"
-        android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/milageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Przebieg"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/milage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        style="@style/common_edittext_style"/>
+        <EditText
+            android:id="@+id/milage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            style="@style/common_edittext_style"/>
 
-    <TextView
-        android:id="@+id/litersTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Zatankowane Litry"
-        android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/litersTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zatankowane Litry"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/liters"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        style="@style/common_edittext_style"/>
+        <EditText
+            android:id="@+id/liters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            style="@style/common_edittext_style"/>
 
-    <TextView
-        android:id="@+id/costTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Koszty Paliwa"
-        android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/costTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Koszty Paliwa"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/cost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        style="@style/common_edittext_style"/>
+        <EditText
+            android:id="@+id/cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            style="@style/common_edittext_style"/>
 
-    <Button
-        android:id="@+id/confirmTankButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Zatwierdź" />
+        <Button
+            android:id="@+id/confirmTankButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zatwierdź"/>
+    </LinearLayout>
+
+
 </LinearLayout>
