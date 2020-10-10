@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,12 +15,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.courseapp1.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
 public class MainMenu extends AppCompatActivity {
 
     public static final String SPECIAL_DATA = "Special_Data";
+    public static final String AUTO_PREF = "AUTO_PREF";
     public static final Integer REQUEST_CODE = 123;
 
     private Button tankInsertButton;
@@ -38,6 +42,17 @@ public class MainMenu extends AppCompatActivity {
         initViews();
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //zapisujemy dane
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        editor.putString(AUTO_PREF, gson.toJson(cars));
+        editor.apply();
     }
 
     private void initViews() {
@@ -66,6 +81,11 @@ public class MainMenu extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
+
+        if (cars.isEmpty()){
+            Intent intent = new Intent(context, AddCar.class);
+            startActivityForResult(intent, REQUEST_CODE);
+        }
     }
 
     @SuppressLint("MissingSuperCall")
@@ -87,9 +107,20 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void initAutoList() {
-        cars = new ArrayList<AutoData>();
+        /*cars = new ArrayList<AutoData>();
         cars.add(new AutoData("Mito", "Alfa-Romeo", "Czerwony"));
-        cars.add(new AutoData("Mondeo", "Ford", "szary"));
+        cars.add(new AutoData("Mondeo", "Ford", "szary"));*/
+
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        String string = sharedPreferences.getString(AUTO_PREF, null);
+        Gson gson = new Gson();
+        ArrayList<AutoData> newAutoList = gson.fromJson(string, new TypeToken<ArrayList<AutoData>>(){}.getType());
+
+        if (newAutoList != null){
+            cars = newAutoList;
+        }else{
+            cars = new ArrayList<>();
+        }
     }
 
     private AutoData getCurrentCar() {
