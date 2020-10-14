@@ -23,6 +23,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import static com.example.courseapp1.R.color.black;
+
 public class GasTankUp extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     public static final String NOWE_TANKOWANIE = "Nowe Tankowanie";
@@ -128,7 +130,7 @@ public class GasTankUp extends AppCompatActivity implements DatePickerDialog.OnD
             return false;
         }else {
             litersTextView.setText("Zatankowane Litry");
-            litersTextView.setTextColor(getResources().getColor(R.color.black));
+            litersTextView.setTextColor(getResources().getColor(black));
             return true;
         }
     }
@@ -136,11 +138,12 @@ public class GasTankUp extends AppCompatActivity implements DatePickerDialog.OnD
     private boolean validateCosts() {
         if (TextUtils.isEmpty(costEditText.getText().toString())){
             costTextView.setText("Koszty muszą zostać podane!");
+            //moze kolor bg?
             costTextView.setTextColor(getResources().getColor(R.color.red));
             return false;
         }else {
             costTextView.setText("Koszty Paliwa");
-            costTextView.setTextColor(getResources().getColor(R.color.black));
+            costTextView.setTextColor(getResources().getColor(black));
             return true;
         }
     }
@@ -157,7 +160,7 @@ public class GasTankUp extends AppCompatActivity implements DatePickerDialog.OnD
             return false;
         }else{
             milageTextView.setText("Przebieg");
-            milageTextView.setTextColor(getResources().getColor(R.color.black));
+            milageTextView.setTextColor(getResources().getColor(black));
         }
         int size = autoData.getTankUpRecord().size();
         if (autoData.getTankUpRecord().size() !=0){
@@ -169,7 +172,7 @@ public class GasTankUp extends AppCompatActivity implements DatePickerDialog.OnD
                return false;
            }else{
                milageTextView.setText("Przebieg");
-               milageTextView.setTextColor(getResources().getColor(R.color.black));
+               milageTextView.setTextColor(getResources().getColor(black));
                return true;
            }
         }
